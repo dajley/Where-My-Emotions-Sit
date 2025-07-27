@@ -1,0 +1,14 @@
+{
+  "folders": [
+	{
+		"path": "../beanbag-backend"
+	},
+	{
+		"name": "Where-My-Emotions-Sit",
+		"path": "."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "Where-My-Emotions-Sit"
+  }
+}
