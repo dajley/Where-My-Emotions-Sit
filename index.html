@@ -1,43 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Where My Emotions Sit</title>
     <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+  </head>
+  <body>
+    <!-- 
+Project: Where My Emotions Sit
+Purpose: An interactive emotional mapping website for users to explore different emotions visually.
+Team Goal: Create a smooth, engaging, emotion-based UI that highlights visuals (images, animations) and intuitive navigation.
+Core Pages: 
+- index.html → homepage with emotion categories
+- anger.html, sadness.html, etc. → individual emotion profiles
 
-<main class="content">
-    <h1 class="title">How are you feeling?</h1>
+Features:
+- Button-based navigation per emotion
+- Emotion-specific imagery and styling
+- Responsive and mobile-friendly
+- Optional: subtle animations, sound or mood-based transitions
 
-    <div class="image-grid">
-        <figure>
-            <a href="joy.html" >
-                <img src="images/Joy%20Temp%20Icon.jpg" alt="Joy" />
-            </a>
-            <figcaption>I am feeling joyful!</figcaption>
-        </figure>
-        <figure>
-            <a href="sadness.html" >
-                <img src="images/Sadness%20Temp%20Icon.jpg" alt="Sadness" />
-            </a>
-            <figcaption>I am feeling sad.</figcaption>
-        </figure>
-        <figure>
-            <a href="anger.html" >
-                <img src="images/Anger%20Icon.png" alt="Anger" />
-            </a>
-            <figcaption>I am feeling angry!</figcaption>
-        </figure>
-        <figure>
-            <a href="fear.html" >
-                <img src="images/Fear%20Icon.jpg" alt="Fear/Anxiety" />
-            </a>
-            <figcaption>I am feeling anxious and afraid.</figcaption>
-        </figure>
+Target Audience: Teens and young adults navigating emotional awareness
+
+Github Repo: https://github.com/dajley/Where-My-Emotions-Sit
+-->
+    <div id="introModal" class="modal">
+      <div class="modal-content">
+        <p>
+          Hey you 👋🏽<br /><br />
+          Welcome to <strong>Where My Emotions Sit.</strong><br /><br />
+          Choose a mood to step into its world — see it, hear it, feel it.<br /><br />
+          Click again to step back or explore another emotion.<br /><br />
+          We recommend a good pair of headphones... and an open mind.<br /><br />
+          Love,<br />
+          The Team 💛
+        </p>
+        <button onclick="closeModal()">Close this window</button>
+      </div>
     </div>
-</main>
 
-</body>
+    <div class="homepage-container">
+      <img
+        src="assets/homepage.png"
+        alt="Where My Emotions Sit Homepage"
+        class="homepage-image"
+      />
+
+      <!-- Invisible clickable buttons positioned over emotion boxes -->
+      <button
+        class="emotion-btn joy-btn"
+        onclick="navigateToRoom('rooms/joy.html')"
+        title="Explore Joy"
+      ></button>
+      <button
+        class="emotion-btn sadness-btn"
+        onclick="navigateToRoom('rooms/sadness.html')"
+        title="Explore Sadness"
+      ></button>
+      <button
+        class="emotion-btn anger-btn"
+        onclick="navigateToRoom('rooms/anger.html')"
+        title="Explore Anger"
+      ></button>
+      <button
+        class="emotion-btn fear-btn"
+        onclick="navigateToRoom('rooms/fear.html')"
+        title="Explore Fear"
+      ></button>
+    </div>
+
+    <script>
+      function closeModal() {
+        document.getElementById("introModal").style.display = "none";
+      }
+
+      function navigateToRoom(roomUrl) {
+        console.log("Navigating to:", roomUrl);
+        window.location.href = roomUrl;
+      }
+
+      // Show intro modal on page load
+      window.onload = function () {
+        console.log("Page loaded");
+        document.getElementById("introModal").style.display = "block";
+
+        // Check if image loads
+        const img = document.querySelector(".homepage-image");
+        img.onload = function () {
+          console.log("Homepage image loaded successfully");
+        };
+        img.onerror = function () {
+          console.error("Failed to load homepage image");
+        };
+      };
+
+      // Add click debugging for buttons
+      document.addEventListener("DOMContentLoaded", function () {
+        const buttons = document.querySelectorAll(".emotion-btn");
+        buttons.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            console.log("Button clicked:", this.className);
+          });
+        });
+      });
+    </script>
+  </body>
 </html>

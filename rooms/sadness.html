@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sadness</title>
+    <link rel="stylesheet" href="../rooms.css" />
+  </head>
+  <body data-room="sadness">
+    <div class="room-container">
+      <img
+        src="../assets/rooms/Sadness.png"
+        alt="Sadness Room"
+        class="room-image"
+      />
+
+      <!-- Interactive Buttons -->
+      <button
+        class="interactive-btn pc-btn"
+        onclick="openSpotifyModal()"
+        title="Play melancholic playlist"
+      >
+        🎵
+      </button>
+
+      <button
+        class="interactive-btn beanbag-btn"
+        onclick="openBeanbagModal()"
+        title="Healing quotes"
+      >
+        🛋️
+      </button>
+
+      <button
+        class="interactive-btn bookshelf-btn"
+        onclick="openBookshelfModal()"
+        title="Healing affirmations"
+      >
+        📚
+      </button>
+
+      <button
+        class="interactive-btn journal-btn"
+        onclick="openJournalModal()"
+        title="Reflection prompts"
+      >
+        ✍️
+      </button>
+    </div>
+
+    <!-- Spotify Playlist Modal -->
+    <div id="spotifyModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('spotifyModal')">&times;</span>
+        <h2>🎵 Sadness Playlist</h2>
+        <p>
+          Sometimes we need to sit with our sadness. These gentle, melancholic
+          tracks honor your feelings.
+        </p>
+        <div class="spotify-container">
+          <iframe
+            src="https://open.spotify.com/playlist/0nn3kPTzflr2b4fzjJzBe6?si=ioIYwxfmSHSA4f8E-xB1QA"
+            width="100%"
+            height="352"
+            frameborder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Beanbag Modal -->
+    <div id="beanbagModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('beanbagModal')">&times;</span>
+        <h2>🛋️ Healing Corner</h2>
+        <p>
+          It's okay to feel sad. Here are some gentle reminders for your healing
+          journey:
+        </p>
+        <div class="quotes-container">
+          <blockquote>
+            "Sadness is not a weakness. It's a sign of having tried for
+            something."
+          </blockquote>
+          <blockquote>
+            "Your feelings are valid, and you don't have to apologize for them."
+          </blockquote>
+          <blockquote>
+            "This too shall pass, but for now, it's okay to feel."
+          </blockquote>
+          <blockquote>
+            "Healing isn't linear, and that's perfectly normal."
+          </blockquote>
+          <blockquote>
+            "You are allowed to grieve, to rest, to take time."
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bookshelf Modal -->
+    <div id="bookshelfModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('bookshelfModal')"
+          >&times;</span
+        >
+        <h2>📚 Healing Affirmations</h2>
+        <p>Gentle affirmations to support you through difficult times:</p>
+        <div class="affirmations-container">
+          <div class="affirmation">I am allowed to feel my emotions fully.</div>
+          <div class="affirmation">
+            My sadness is temporary, but my strength is lasting.
+          </div>
+          <div class="affirmation">I am healing at my own pace.</div>
+          <div class="affirmation">
+            I deserve compassion, especially from myself.
+          </div>
+          <div class="affirmation">It's okay to not be okay sometimes.</div>
+          <div class="affirmation">
+            I am resilient and will get through this.
+          </div>
+          <div class="affirmation">
+            My feelings are valid and deserve acknowledgment.
+          </div>
+          <div class="affirmation">
+            Each day brings new possibilities for healing.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Journal Modal -->
+    <div id="journalModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('journalModal')">&times;</span>
+        <h2>✍️ Reflection Journal</h2>
+        <p>Take time to process your feelings with these gentle prompts:</p>
+        <div class="journal-container">
+          <div class="prompt">
+            <h4>What is weighing on your heart today?</h4>
+            <textarea placeholder="Let your thoughts flow freely..."></textarea>
+          </div>
+          <div class="prompt">
+            <h4>What do you need most right now to feel supported?</h4>
+            <textarea
+              placeholder="Think about comfort, understanding, rest..."
+            ></textarea>
+          </div>
+          <div class="prompt">
+            <h4>Write a compassionate letter to yourself:</h4>
+            <textarea
+              placeholder="Speak to yourself as you would to a dear friend..."
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../room-interactions.js"></script>
+    <script>
+      console.log("Sadness room loaded - processing emotions gently");
+    </script>
+  </body>
+</html>

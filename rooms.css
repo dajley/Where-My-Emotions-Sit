@@ -1,24 +1,344 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body, html {
-    height: 100%;
-    width: 100%;
+body,
+html {
+  height: 100%;
+  width: 100%;
 }
 
 .background {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative; /* Added for positioning overlays */
 }
 
-.background img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* Makes the image fill the container without stretching */
+/* Room Container for Button Layout */
+.room-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.room-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Interactive Button Styles */
+.interactive-btn {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  border: 3px solid #333;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.interactive-btn:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.interactive-btn:active {
+  transform: scale(0.95);
+}
+
+/* Button Positions - Adjust these as needed */
+.pc-btn {
+  top: 25%;
+  right: 15%;
+  background: rgba(135, 206, 250, 0.9); /* Light blue for music */
+}
+
+.beanbag-btn {
+  bottom: 20%;
+  left: 30%;
+  background: rgba(255, 182, 193, 0.9); /* Light pink for comfort */
+}
+
+.bookshelf-btn {
+  top: 35%;
+  left: 20%;
+  background: rgba(144, 238, 144, 0.9); /* Light green for affirmations */
+}
+
+.journal-btn {
+  bottom: 35%;
+  right: 25%;
+  background: rgba(255, 218, 185, 0.9); /* Peach for journaling */
+}
+
+/* Sadness Room Specific Colors */
+body[data-room="sadness"] .pc-btn {
+  background: rgba(147, 112, 219, 0.9); /* Soft purple for melancholic music */
+}
+
+body[data-room="sadness"] .beanbag-btn {
+  background: rgba(176, 196, 222, 0.9); /* Light steel blue for healing */
+}
+
+body[data-room="sadness"] .bookshelf-btn {
+  background: rgba(221, 160, 221, 0.9); /* Plum for gentle affirmations */
+}
+
+body[data-room="sadness"] .journal-btn {
+  background: rgba(188, 143, 143, 0.9); /* Rosy brown for reflection */
+}
+
+/* Fear/Anxiety Room Specific Colors */
+body[data-room="fear"] .pc-btn {
+  background: rgba(152, 251, 152, 0.9); /* Pale green for calming music */
+}
+
+body[data-room="fear"] .beanbag-btn {
+  background: rgba(173, 216, 230, 0.9); /* Light blue for grounding */
+}
+
+body[data-room="fear"] .bookshelf-btn {
+  background: rgba(255, 228, 196, 0.9); /* Bisque for calming affirmations */
+}
+
+body[data-room="fear"] .journal-btn {
+  background: rgba(230, 230, 250, 0.9); /* Lavender for anxiety processing */
+}
+
+/* Anger Room Specific Colors */
+body[data-room="anger"] .pc-btn {
+  background: rgba(255, 69, 0, 0.9); /* Orange red for intense music */
+}
+
+body[data-room="anger"] .beanbag-btn {
+  background: rgba(220, 20, 60, 0.9); /* Crimson for release */
+}
+
+body[data-room="anger"] .bookshelf-btn {
+  background: rgba(255, 140, 0, 0.9); /* Dark orange for empowerment */
+}
+
+body[data-room="anger"] .journal-btn {
+  background: rgba(178, 34, 34, 0.9); /* Fire brick for processing */
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: #ffffff;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 700px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+.modal-content h2 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  padding-right: 40px;
+}
+
+.modal-content p {
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Spotify Container */
+.spotify-container {
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Quotes Container */
+.quotes-container {
+  margin-top: 20px;
+}
+
+.quotes-container blockquote {
+  background: #f8f9fa;
+  border-left: 4px solid #ff6b35;
+  margin: 15px 0;
+  padding: 15px 20px;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #555;
+  border-radius: 5px;
+}
+
+/* Books Container */
+.books-container {
+  margin-top: 20px;
+}
+
+.books-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.books-container li {
+  background: #f8f9fa;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #4ecdc4;
+  font-size: 1.05rem;
+  color: #555;
+}
+
+/* Affirmations Container */
+.affirmations-container {
+  margin-top: 20px;
+  display: grid;
+  gap: 15px;
+}
+
+.affirmation {
+  background: linear-gradient(135deg, #fff9e6, #fff3d1);
+  border: 2px solid #ff6b35;
+  border-radius: 12px;
+  padding: 20px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.affirmation::before {
+  content: "✨";
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+
+.affirmation:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.2);
+  background: linear-gradient(135deg, #fff6e6, #ffedd1);
+  border-color: #ff5722;
+}
+
+.affirmation:active {
+  transform: scale(0.98);
+} /* Journal Container */
+.journal-container {
+  margin-top: 20px;
+}
+
+.prompt {
+  margin-bottom: 25px;
+}
+
+.prompt h4 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.prompt textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.prompt textarea:focus {
+  outline: none;
+  border-color: #a55eea;
+  box-shadow: 0 0 10px rgba(165, 94, 234, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modal-content {
+    margin: 10% auto;
+    padding: 20px;
+    width: 95%;
+    max-height: 80vh;
+  }
+
+  .modal-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .modal-content p {
+    font-size: 1rem;
+  }
+
+  .spotify-container iframe {
+    height: 280px;
+  }
+}
+
+/* Hover effects for clickable areas */
+area {
+  transition: opacity 0.3s ease;
+}
+
+area:hover {
+  opacity: 0.8;
 }

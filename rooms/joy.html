@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joy</title>
+    <link rel="stylesheet" href="../rooms.css" />
+  </head>
+  <body>
+    <div class="room-container">
+      <img src="../assets/rooms/Joy.png" alt="Joy Room" class="room-image" />
+
+      <!-- Interactive Buttons -->
+      <button
+        class="interactive-btn pc-btn"
+        onclick="openSpotifyModal()"
+        title="Play joy playlist"
+      >
+        🎵
+      </button>
+
+      <button
+        class="interactive-btn beanbag-btn"
+        onclick="openBeanbagModal()"
+        title="Comfort quotes"
+      >
+        🛋️
+      </button>
+
+      <button
+        class="interactive-btn bookshelf-btn"
+        onclick="openBookshelfModal()"
+        title="Joy affirmations"
+      >
+        📚
+      </button>
+
+      <button
+        class="interactive-btn journal-btn"
+        onclick="openJournalModal()"
+        title="Journal prompts"
+      >
+        ✍️
+      </button>
+    </div>
+
+    <!-- Spotify Playlist Modal -->
+    <div id="spotifyModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('spotifyModal')">&times;</span>
+        <h2>🎵 Joy Playlist</h2>
+        <p>
+          Vibe to these uplifting tracks that capture the essence of joy and
+          contentment!
+        </p>
+        <div class="spotify-container">
+          <iframe
+            src="https://open.spotify.com/embed/playlist/0TzPMALkhHBHQeETePO96x?utm_source=generator"
+            width="100%"
+            height="352"
+            frameborder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Beanbag Modal -->
+    <div id="beanbagModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('beanbagModal')">&times;</span>
+        <h2>🛋️ Cozy Comfort Corner</h2>
+        <p>
+          Take a moment to rest and reflect. Here are some comfort quotes to
+          embrace your joy:
+        </p>
+        <div class="quotes-container">
+          <blockquote>"Joy is not in things; it is in us."</blockquote>
+          <blockquote>"Happiness is a warm puppy."</blockquote>
+          <blockquote>"Find joy in the ordinary."</blockquote>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bookshelf Modal -->
+    <div id="bookshelfModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('bookshelfModal')"
+          >&times;</span
+        >
+        <h2>📚 Joy Affirmations</h2>
+        <p>
+          Embrace these positive affirmations to celebrate and amplify your joy:
+        </p>
+        <div class="affirmations-container">
+          <div class="affirmation">I am worthy of happiness and joy.</div>
+          <div class="affirmation">
+            My joy is a gift that brightens the world around me.
+          </div>
+          <div class="affirmation">
+            I choose to focus on the good in every moment.
+          </div>
+          <div class="affirmation">
+            Happiness flows through me naturally and effortlessly.
+          </div>
+          <div class="affirmation">
+            I am grateful for this feeling of contentment.
+          </div>
+          <div class="affirmation">
+            My positive energy attracts more joy into my life.
+          </div>
+          <div class="affirmation">
+            I deserve to feel this happy and fulfilled.
+          </div>
+          <div class="affirmation">
+            Each smile I share creates ripples of joy.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Journal Modal -->
+    <div id="journalModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('journalModal')">&times;</span>
+        <h2>✍️ Joy Journal</h2>
+        <p>Reflect on your joyful moments with these prompts:</p>
+        <div class="journal-container">
+          <div class="prompt">
+            <h4>What made you smile today?</h4>
+            <textarea placeholder="Write your thoughts here..."></textarea>
+          </div>
+          <div class="prompt">
+            <h4>Describe a moment when you felt truly content:</h4>
+            <textarea placeholder="Write your thoughts here..."></textarea>
+          </div>
+          <div class="prompt">
+            <h4>What are three things you're grateful for right now?</h4>
+            <textarea placeholder="Write your thoughts here..."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../room-interactions.js"></script>
+    <script>
+      // Quick test to see if JS is working
+      console.log("Joy page loaded - testing interactivity");
+
+      // Test function call
+      function testClick() {
+        console.log("Test click working!");
+        alert("JavaScript is working!");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anger</title>
+    <link rel="stylesheet" href="../rooms.css" />
+  </head>
+  <body data-room="anger">
+    <div class="room-container">
+      <img
+        src="../assets/rooms/Anger.png"
+        alt="Anger Room"
+        class="room-image"
+      />
+
+      <!-- Interactive Buttons -->
+      <button
+        class="interactive-btn pc-btn"
+        onclick="openSpotifyModal()"
+        title="Play intense playlist"
+      >
+        🎵
+      </button>
+
+      <button
+        class="interactive-btn beanbag-btn"
+        onclick="openBeanbagModal()"
+        title="Release quotes"
+      >
+        🛋️
+      </button>
+
+      <button
+        class="interactive-btn bookshelf-btn"
+        onclick="openBookshelfModal()"
+        title="Empowering affirmations"
+      >
+        📚
+      </button>
+
+      <button
+        class="interactive-btn journal-btn"
+        onclick="openJournalModal()"
+        title="Anger processing"
+      >
+        ✍️
+      </button>
+    </div>
+
+    <!-- Spotify Playlist Modal -->
+    <div id="spotifyModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('spotifyModal')">&times;</span>
+        <h2>🎵 Intense Energy Playlist</h2>
+        <p>
+          Channel your anger into powerful energy with these intense, cathartic
+          tracks.
+        </p>
+        <div class="spotify-container">
+          <iframe
+            src="https://open.spotify.com/embed/playlist/1AKfVCAC0mWcBYq4QmcJoK?utm_source=generator"
+            width="100%"
+            height="352"
+            frameborder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Beanbag Modal -->
+    <div id="beanbagModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('beanbagModal')">&times;</span>
+        <h2>🛋️ Release Corner</h2>
+        <p>
+          Your anger is valid. Here are some reminders for healthy expression
+          and release:
+        </p>
+        <div class="quotes-container">
+          <blockquote>
+            "Anger is an acid that can do more harm to the vessel than to
+            anything it's poured on."
+          </blockquote>
+          <blockquote>
+            "You have the right to be angry, but you have the responsibility to
+            be wise about it."
+          </blockquote>
+          <blockquote>
+            "Channel your anger into action, not destruction."
+          </blockquote>
+          <blockquote>
+            "Your feelings are valid, your actions are your choice."
+          </blockquote>
+          <blockquote>
+            "Breathe deeply. This feeling will pass, but the lesson will
+            remain."
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bookshelf Modal -->
+    <div id="bookshelfModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('bookshelfModal')"
+          >&times;</span
+        >
+        <h2>📚 Empowering Affirmations</h2>
+        <p>
+          Transform your anger into strength with these empowering affirmations:
+        </p>
+        <div class="affirmations-container">
+          <div class="affirmation">
+            I acknowledge my anger and choose how to express it.
+          </div>
+          <div class="affirmation">
+            My emotions are messengers showing me what matters.
+          </div>
+          <div class="affirmation">
+            I can feel angry and still make wise choices.
+          </div>
+          <div class="affirmation">
+            I transform my anger into positive action.
+          </div>
+          <div class="affirmation">
+            I am in control of my responses, not my impulses.
+          </div>
+          <div class="affirmation">
+            My anger reveals my boundaries and values.
+          </div>
+          <div class="affirmation">
+            I channel my passionate energy constructively.
+          </div>
+          <div class="affirmation">
+            I am learning to express myself with power and wisdom.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Journal Modal -->
+    <div id="journalModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('journalModal')">&times;</span>
+        <h2>✍️ Anger Processing</h2>
+        <p>
+          Use these prompts to understand and process your anger constructively:
+        </p>
+        <div class="journal-container">
+          <div class="prompt">
+            <h4>
+              What specific situation or boundary violation triggered this
+              anger?
+            </h4>
+            <textarea
+              placeholder="Be specific about what happened..."
+            ></textarea>
+          </div>
+          <div class="prompt">
+            <h4>What values or needs of mine were not respected?</h4>
+            <textarea
+              placeholder="Identify what matters most to you..."
+            ></textarea>
+          </div>
+          <div class="prompt">
+            <h4>How can I channel this energy into positive action?</h4>
+            <textarea
+              placeholder="Turn your anger into constructive change..."
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../room-interactions.js"></script>
+    <script>
+      console.log("Anger room loaded - processing intense emotions");
+    </script>
+  </body>
+</html>

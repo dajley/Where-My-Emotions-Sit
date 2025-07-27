@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fear/Anxiety</title>
+    <link rel="stylesheet" href="../rooms.css" />
+  </head>
+  <body data-room="fear">
+    <div class="room-container">
+      <img
+        src="../assets/rooms/Fear_Anxiety.png"
+        alt="Fear/Anxiety Room"
+        class="room-image"
+      />
+
+      <!-- Interactive Buttons -->
+      <button
+        class="interactive-btn pc-btn"
+        onclick="openSpotifyModal()"
+        title="Play calming playlist"
+      >
+        🎵
+      </button>
+
+      <button
+        class="interactive-btn beanbag-btn"
+        onclick="openBeanbagModal()"
+        title="Grounding quotes"
+      >
+        🛋️
+      </button>
+
+      <button
+        class="interactive-btn bookshelf-btn"
+        onclick="openBookshelfModal()"
+        title="Calming affirmations"
+      >
+        📚
+      </button>
+
+      <button
+        class="interactive-btn journal-btn"
+        onclick="openJournalModal()"
+        title="Anxiety processing"
+      >
+        ✍️
+      </button>
+    </div>
+
+    <!-- Spotify Playlist Modal -->
+    <div id="spotifyModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('spotifyModal')">&times;</span>
+        <h2>🎵 Calming Playlist</h2>
+        <p>
+          Gentle, soothing music to help ease anxiety and ground your nervous
+          system.
+        </p>
+        <div class="spotify-container">
+          <iframe
+            src="https://open.spotify.com/playlist/37i9dQZF1EIhiFc6lmyOkD?si=5b3443cd26894b32"
+            width="100%"
+            height="352"
+            frameborder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Beanbag Modal -->
+    <div id="beanbagModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('beanbagModal')">&times;</span>
+        <h2>🛋️ Grounding Corner</h2>
+        <p>
+          Take a deep breath. Here are some grounding reminders to help you feel
+          safe:
+        </p>
+        <div class="quotes-container">
+          <blockquote>
+            "You are safe in this moment. Breathe with me."
+          </blockquote>
+          <blockquote>
+            "This feeling is temporary. You have survived difficult times
+            before."
+          </blockquote>
+          <blockquote>"Focus on what you can control right now."</blockquote>
+          <blockquote>
+            "Your anxiety does not define you. You are stronger than your
+            fears."
+          </blockquote>
+          <blockquote>"One breath at a time. One moment at a time."</blockquote>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bookshelf Modal -->
+    <div id="bookshelfModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('bookshelfModal')"
+          >&times;</span
+        >
+        <h2>📚 Calming Affirmations</h2>
+        <p>Gentle affirmations to soothe your anxious mind:</p>
+        <div class="affirmations-container">
+          <div class="affirmation">I am safe and grounded in this moment.</div>
+          <div class="affirmation">I can handle whatever comes my way.</div>
+          <div class="affirmation">My breath is my anchor to the present.</div>
+          <div class="affirmation">I choose peace over worry.</div>
+          <div class="affirmation">
+            I am learning to trust myself more each day.
+          </div>
+          <div class="affirmation">
+            It's okay to feel anxious; I will be gentle with myself.
+          </div>
+          <div class="affirmation">I have the strength to face my fears.</div>
+          <div class="affirmation">
+            This too shall pass, and I will be okay.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Journal Modal -->
+    <div id="journalModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('journalModal')">&times;</span>
+        <h2>✍️ Anxiety Processing</h2>
+        <p>Use these prompts to understand and process your fears:</p>
+        <div class="journal-container">
+          <div class="prompt">
+            <h4>What specific thoughts are creating anxiety right now?</h4>
+            <textarea
+              placeholder="Name your worries to reduce their power..."
+            ></textarea>
+          </div>
+          <div class="prompt">
+            <h4>What evidence do I have that contradicts this fear?</h4>
+            <textarea
+              placeholder="Challenge anxious thoughts with facts..."
+            ></textarea>
+          </div>
+          <div class="prompt">
+            <h4>What would I tell a friend experiencing this same fear?</h4>
+            <textarea
+              placeholder="Offer yourself the same compassion..."
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../room-interactions.js"></script>
+    <script>
+      console.log("Fear/Anxiety room loaded - creating safe space");
+    </script>
+  </body>
+</html>
