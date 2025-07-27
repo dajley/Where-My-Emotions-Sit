@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.content {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 16px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+.image-grid figure {
+    margin: 0;
+    text-align: center;
+}
+
+.image-grid figcaption {
+    margin-top: 8px;
+    font-size: 1rem;
+    color: #555;
+}
