@@ -120,6 +120,23 @@ body[data-room="fear"] .journal-btn {
   background: rgba(230, 230, 250, 0.9); /* Lavender for anxiety processing */
 }
 
+/* Anger Room Specific Colors */
+body[data-room="anger"] .pc-btn {
+  background: rgba(255, 69, 0, 0.9); /* Orange red for intense music */
+}
+
+body[data-room="anger"] .beanbag-btn {
+  background: rgba(220, 20, 60, 0.9); /* Crimson for release */
+}
+
+body[data-room="anger"] .bookshelf-btn {
+  background: rgba(255, 140, 0, 0.9); /* Dark orange for empowerment */
+}
+
+body[data-room="anger"] .journal-btn {
+  background: rgba(178, 34, 34, 0.9); /* Fire brick for processing */
+}
+
 /* Modal Styles */
 .modal {
   display: none;
